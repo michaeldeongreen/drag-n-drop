@@ -1,7 +1,7 @@
-<div id="drop-area" appDnd (filesChangeEmiter)="onFilesChange($event)" (filesInvalidEmiter)="onFileInvalids($event)" [allowed_extensions]="['deb', 'mp4', 'bmp', 'ts']">
+<div id="drop-area" appDnd (filesChangeEmiter)="onFilesChange($event)" (filesInvalidEmiter)="onFileInvalids($event)" [allowed_extensions]="['mp4', 'ts']">
   <form class="my-form">
     <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
-    <input type="file" id="fileElem" appDnd (filesChangeEmiter)="onFilesChange($event)" (filesInvalidEmiter)="onFileInvalids($event)" [allowed_extensions]="['deb', 'mp4', 'bmp', 'ts']">
+    <input type="file" id="fileElem" appDnd (filesChangeEmiter)="onFilesChange($event)" (filesInvalidEmiter)="onFileInvalids($event)" [allowed_extensions]="['mp4', 'ts']" accept=".mp4,.ts">
     <label class="button" for="fileElem">Select some files</label>
   </form>
   <progress id="progress-bar" max=100 value=0></progress>
