@@ -1,0 +1,22 @@
+<div id="drop-area" appDnd (filesChangeEmiter)="onFilesChange($event)" (filesInvalidEmiter)="onFileInvalids($event)" [allowed_extensions]="['deb', 'mp4', 'bmp', 'ts']">
+  <form class="my-form">
+    <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
+    <input type="file" id="fileElem" appDnd (filesChangeEmiter)="onFilesChange($event)" (filesInvalidEmiter)="onFileInvalids($event)" [allowed_extensions]="['deb', 'mp4', 'bmp', 'ts']">
+    <label class="button" for="fileElem">Select some files</label>
+  </form>
+  <progress id="progress-bar" max=100 value=0></progress>
+  <div id="gallery"></div>
+</div>
+
+<div class="dropzone-list">
+  <ul class="valid">
+    <li *ngFor="let file of fileList">
+      {{ file.name }}
+    </li>
+  </ul>
+  <ul class="invalid">
+    <li *ngFor="let file of invalidFiles">
+      {{ file.name }}
+    </li>
+  </ul>
+</div>
